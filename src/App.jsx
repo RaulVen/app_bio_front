@@ -1,11 +1,12 @@
-import { MantineProvider, Button } from "@mantine/core";
-import HomeView from "./views/homeView/homeView";
+import React from "react";
+import { MantineProvider } from "@mantine/core";
 
+import BiofungicidaView from "@/views/biofungicidaView/biofungicidaView";
 
 export default function App() {
   return (
-    <MantineProvider defaultColorScheme="dark">
-        <HomeView/>
+    <MantineProvider defaultColorScheme="light">
+      <BiofungicidaView />
     </MantineProvider>
   );
 }
