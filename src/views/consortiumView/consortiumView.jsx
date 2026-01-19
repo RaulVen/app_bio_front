@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import ConsortiumCard from "@/components/consortium-components/consortium-card/consortium-card";
 import FloatingToolbar from "@/components/consortium-components/floating-toolbar/floating-toolbar";

@@ -47,7 +47,6 @@ export default function Gauge({
   max = 100,
   unit = "",
   labels = [],
-  segments = [], // (no se usa, lo dejamos por compatibilidad)
   statusLabel = "",
   centerText = "",
   footerValue = "",
