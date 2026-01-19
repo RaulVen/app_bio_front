@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion, MotionConfig } from "framer-motion";
 import SoilLifeIcon from "@/components/landing/soil-life-icon";
 import BottomBar from "@/components/common/bottom-bar/bottom-bar";
@@ -83,6 +84,7 @@ function WaveBackdrop() {
 export default function LandingView() {
   // fuerza remount para que SIEMPRE se vea la animación al entrar
   const [mountKey, setMountKey] = useState(0);
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMountKey((k) => k + 1), []);
 
   return (

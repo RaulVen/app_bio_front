@@ -1,11 +1,9 @@
 import React from "react";
 
 import BottomBar from "@/components/common/bottom-bar/bottom-bar";
-import FloatingToolbar from "@/components/consortium-components/floating-toolbar/floating-toolbar";
 
 // Reutilizado (si lo moviste a common, cambia este import)
 import CalendarBadge from "@/components/common/calendar-badge/calendar-badge";
-
 
 import ConsortiumSideCard from "@/components/consortium-fijadores/consortium-side-card/consortium-side-card";
 import FijadoresHeaderBar from "@/components/consortium-fijadores/fijadores-header-bar/fijadores-header-bar";
@@ -25,18 +23,9 @@ export default function FijadoresView() {
             <CalendarBadge month="October" day="10" />
           </div>
 
-          {/* Der: header verde con toolbar */}
+          {/* Der: header verde (SIN toolbar) */}
           <div className="flex-1">
-            <FijadoresHeaderBar
-              title="FIJADORES DE NITRÓGENO"
-              toolbar={
-                <FloatingToolbar
-                  onAdd={() => console.log("add")}
-                  onMenu={() => console.log("menu")}
-                  onBack={() => console.log("back")}
-                />
-              }
-            />
+            <FijadoresHeaderBar title="FIJADORES DE NITRÓGENO" />
           </div>
         </div>
 

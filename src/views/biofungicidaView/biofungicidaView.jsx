@@ -1,7 +1,6 @@
 import React from "react";
 
 import BottomBar from "@/components/common/bottom-bar/bottom-bar";
-import FloatingToolbar from "@/components/consortium-components/floating-toolbar/floating-toolbar";
 import CalendarBadge from "@/components/common/calendar-badge/calendar-badge";
 
 import ConsortiumSideCard from "@/components/consortium-biofungicida/consortium-side-card/consortium-side-card";
@@ -16,25 +15,22 @@ export default function BiofungicidaView() {
 
       {/* Layout principal */}
       <div className="relative z-10 max-w-7xl mx-auto px-10 pt-10 pb-28">
-        {/* ✅ FILA SUPERIOR: calendario (izq) + header verde (der) */}
+        {/* FILA SUPERIOR: calendario (izq) + header verde (der) */}
         <div className="grid grid-cols-12 gap-6 items-start">
           {/* Calendario a la izquierda */}
           <div className="col-span-12 lg:col-span-2 flex justify-start pt-6">
             <CalendarBadge month="October" day="10" />
           </div>
 
-          {/* Header verde a la derecha (con toolbar encima) */}
-          <div className="col-span-12 lg:col-span-10 relative">
-            {/* ✅ Toolbar flotante pegada arriba-derecha del header */}
-            <FloatingToolbar className="absolute -top-6 right-2 z-30" />
-
+          {/* Header verde a la derecha (sin toolbar) */}
+          <div className="col-span-12 lg:col-span-10">
             <BiofungicidaHeaderBar title="BIOFUNGICIDA" />
           </div>
         </div>
 
-        {/* ✅ Cuerpo: tarjeta izquierda + contenido */}
-        <div className="mt-6 grid grid-cols-12 gap-0">
-          <div className="col-span-12 lg:col-span-3">
+        {/* Cuerpo: tarjeta izquierda + contenido */}
+        <div className="mt-6 grid grid-cols-12 gap-0 items-stretch">
+          <div className="col-span-12 lg:col-span-3 h-full">
             <ConsortiumSideCard
               title="BIOFUNGICIDA"
               consortiumLabel="CONSORCIO"
