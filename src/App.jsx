@@ -11,7 +11,7 @@ import FosforoView from "@/views/fosforoView/fosforoView";
 import PotasioView from "@/views/potasioView/potasioView";
 
 // ✅ Cambia aquí la pantalla que quieres ver
-const SCREEN = "fijadores";
+const SCREEN = "home";
 // opciones:
 // "landing" | "home" | "micorrizas" | "fijadores" | "biofungicida" | "fosforo" | "potasio"
 
