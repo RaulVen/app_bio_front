@@ -1,5 +1,4 @@
 import React from "react";
-import { Paper, Text } from "@mantine/core";
 
 export default function MetricCard({
   title,
@@ -17,28 +16,27 @@ export default function MetricCard({
   };
 
   return (
-    <Paper
-      radius="lg"
-      p="lg"
-      className={`${tones[tone]} border backdrop-blur-md`}
+    <div
+      className={[
+        "rounded-2xl p-6 border backdrop-blur-md",
+        "shadow-[0_10px_30px_rgba(0,0,0,0.35)]",
+        tones[tone] || tones.neutral,
+      ].join(" ")}
     >
-      <Text fw={700} className="text-white/90 text-lg">
-        {title}
-      </Text>
+      <div className="text-white/90 text-lg font-bold">{title}</div>
 
       <div className="mt-2 flex items-end gap-2">
-        <Text fw={800} className="text-white text-2xl">
-          {value}
-        </Text>
-        <Text className="text-white/70">{unit}</Text>
+        <div className="text-white text-2xl font-extrabold">{value}</div>
+        <div className="text-white/70 text-sm pb-[2px]">{unit}</div>
       </div>
 
-      {note ? <Text className="text-white/70 mt-3 text-sm">{note}</Text> : null}
+      {note ? <div className="text-white/70 mt-3 text-sm">{note}</div> : null}
+
       {status ? (
-        <Text className="text-white/80 mt-2 text-sm">
+        <div className="text-white/80 mt-2 text-sm">
           <span className="text-white/60">Estado:</span> {status}
-        </Text>
+        </div>
       ) : null}
-    </Paper>
+    </div>
   );
 }

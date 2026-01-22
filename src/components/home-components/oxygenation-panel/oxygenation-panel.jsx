@@ -1,14 +1,38 @@
 import React from "react";
-import { Paper, Switch, Divider, Text } from "@mantine/core";
 
 function Row({ label, value, valueEmphasis = false }) {
   return (
     <div className="py-3">
-      <Text className="text-white/60 text-sm">{label}</Text>
-      <Text className={`text-white ${valueEmphasis ? "font-semibold" : ""}`}>
+      <div className="text-white/60 text-sm">{label}</div>
+      <div className={`text-white ${valueEmphasis ? "font-semibold" : ""}`}>
         {value}
-      </Text>
+      </div>
     </div>
+  );
+}
+
+function Divider() {
+  return <div className="h-px w-full bg-white/10" />;
+}
+
+/** Switch simple estilo Mantine */
+function Toggle({ checked }) {
+  return (
+    <button
+      type="button"
+      aria-pressed={checked}
+      className={[
+        "relative inline-flex h-7 w-12 items-center rounded-full transition",
+        checked ? "bg-emerald-500/80" : "bg-white/15",
+      ].join(" ")}
+    >
+      <span
+        className={[
+          "inline-block h-5 w-5 transform rounded-full bg-white shadow transition",
+          checked ? "translate-x-6" : "translate-x-1",
+        ].join(" ")}
+      />
+    </button>
   );
 }
 
@@ -20,41 +44,52 @@ export default function OxygenationPanel({
   program = "Cada 3 h - 8 h totales diarias",
 }) {
   return (
-    <Paper radius="lg" p="lg" className="bg-white/5 border border-white/10 backdrop-blur-md">
-      <Text fw={700} className="text-white/90 text-lg mb-3">
+    <div className="rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md p-6">
+      <div className="text-white/90 text-lg font-bold mb-3">
         Oxigenación y ciclos
-      </Text>
+      </div>
 
       <div className="flex items-center justify-between">
-        <Text className="text-white/80">
+        <div className="text-white/80">
           Oxigenador:{" "}
-          <span className={`${isOn ? "text-emerald-400" : "text-white/60"} font-semibold`}>
+          <span
+            className={[
+              "font-semibold",
+              isOn ? "text-emerald-400" : "text-white/60",
+            ].join(" ")}
+          >
             {isOn ? "ENCENDIDO" : "APAGADO"}
           </span>
-        </Text>
-        <Switch checked={isOn} readOnly />
+        </div>
+
+        {/* Solo visual (readOnly como antes) */}
+        <Toggle checked={isOn} />
       </div>
 
-      <Divider my="md" className="border-white/10" />
+      <div className="my-4">
+        <Divider />
+      </div>
 
       <Row label="Tiempo ON acumulado hoy" value={timeOnToday} valueEmphasis />
-      <Divider className="border-white/10" />
+      <Divider />
       <Row label="Último ciclo iniciado" value={lastCycle} valueEmphasis />
-      <Divider className="border-white/10" />
+      <Divider />
       <Row label="Modo de operación" value={mode} valueEmphasis />
-      <Divider className="border-white/10" />
+      <Divider />
       <Row label="Programa de aireación" value={program} valueEmphasis />
 
-      <Divider my="md" className="border-white/10" />
+      <div className="my-4">
+        <Divider />
+      </div>
 
       <div className="mt-2">
-        <Text fw={700} className="text-white/90 flex items-center gap-2">
+        <div className="text-white/90 font-bold flex items-center gap-2">
           <span className="text-white/70">📉</span> Historial y gráficas
-        </Text>
-        <Text className="text-white/70 mt-2 text-sm">
+        </div>
+        <div className="text-white/70 mt-2 text-sm">
           Toque para visualizar la tendencia de las últimas 72 horas y revisar eventos críticos.
-        </Text>
+        </div>
       </div>
-    </Paper>
+    </div>
   );
 }

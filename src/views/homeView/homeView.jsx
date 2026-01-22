@@ -9,11 +9,11 @@ import BottomBar from "@/components/common/bottom-bar/bottom-bar";
 export default function HomeView() {
   return (
     <div className="min-h-screen w-full bg-[#212121] relative overflow-hidden">
-      {/* Glows de fondo (como el diseño) */}
+      {/* Glows de fondo */}
       <div className="pointer-events-none absolute -top-48 -left-52 h-[620px] w-[620px] rounded-full bg-cyan-500/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-64 -right-52 h-[720px] w-[720px] rounded-full bg-blue-500/10 blur-3xl" />
 
-      {/* ✅ padding-bottom para que el BottomBar no tape el contenido */}
+      {/* ✅ padding-bottom para que BottomBar NO tape el contenido */}
       <div className="relative max-w-6xl mx-auto px-6 py-10 pb-28">
         <div className="grid grid-cols-12 gap-6">
           {/* Izquierda */}
@@ -55,7 +55,7 @@ export default function HomeView() {
                 value="480"
                 unit="ppm"
                 note="Concentración control"
-                status="Estado: Óptimo"
+                status="Óptimo"
                 tone="good"
               />
 
@@ -93,7 +93,7 @@ export default function HomeView() {
         </div>
       </div>
 
-      {/* ✅ BottomBar unificado (igual que las demás pantallas) */}
+      {/* ✅ BottomBar unificado */}
       <BottomBar />
     </div>
   );
